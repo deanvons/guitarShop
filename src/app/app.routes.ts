@@ -1,3 +1,18 @@
-import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { Routes } from '@angular/router';
+import { GuiterListPageComponent } from './pages/guiter-list-page/guiter-list-page.component';
+import { GuitarDetailsPageComponent } from './pages/guitar-details-page/guitar-details-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+
+
+export const routes: Routes = [
+
+{path: '',component: GuiterListPageComponent},
+{path: 'details',component: GuitarDetailsPageComponent},
+{path: 'login',component: LoginPageComponent}
+
+
+
+
+
+];
