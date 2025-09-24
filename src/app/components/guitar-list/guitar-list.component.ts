@@ -1,8 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { Guitar } from '../../models/Guitar';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { GuitarListItemComponent } from "../guitar-list-item/guitar-list-item.component";
+import { GuitarListItemComponent } from '../guitar-list-item/guitar-list-item.component';
+import { GuitarService } from '../../services/guitar.service';
 
 @Component({
   selector: 'app-guitar-list',
@@ -11,30 +11,23 @@ import { GuitarListItemComponent } from "../guitar-list-item/guitar-list-item.co
   templateUrl: './guitar-list.component.html',
   styleUrl: './guitar-list.component.css',
 })
-export class GuitarListComponent {
-  private _http: HttpClient | undefined;
-  
+export class GuitarListComponent implements OnInit {
+  private _guitarService: GuitarService;
 
-  constructor(http: HttpClient) {
-    this._http = http;
+  constructor(guitarService: GuitarService) {
+    this._guitarService = guitarService;
   }
 
-  public guitars: Guitar[] = []
+  public guitars: Guitar[] = [];
+
+  public ngOnInit() {
+    this.getSampleGuitar();
+  }
 
   public getSampleGuitar(): void {
-    this._http!.get<Guitar[]>(
-      'https://island-survival-kit-builder.onrender.com/guitars'
-    ).subscribe({
-
-
-
-
-
-
-
-      
+    this._guitarService.getGuitars().subscribe({
       next: (guitars) => {
-        this.guitars = guitars
+        this.guitars = guitars;
       },
     });
   }
