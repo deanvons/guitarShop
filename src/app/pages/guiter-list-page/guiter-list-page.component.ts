@@ -10,4 +10,14 @@ import { GuitarListComponent } from "../../components/guitar-list/guitar-list.co
 })
 export class GuiterListPageComponent {
 
+
+
+
+
+
+
+
+
+
+  
 }

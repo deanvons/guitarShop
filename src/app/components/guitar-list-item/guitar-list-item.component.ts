@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Guitar } from '../../models/Guitar';
 
 @Component({
@@ -12,9 +12,9 @@ export class GuitarListItemComponent {
   @Input()
   public guitar: Guitar | undefined;
 
+  @Output() selectedEvent: EventEmitter<string> = new EventEmitter();
 
-
-
-
-  
+  selected(): void {
+    this.selectedEvent.emit(this.guitar?.id);
+  }
 }

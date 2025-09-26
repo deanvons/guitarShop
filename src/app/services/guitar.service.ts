@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Guitar } from '../models/Guitar';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { API_URL } from '../api/urls';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class GuitarService {
 
   getGuitars(): Observable<Guitar[]> {
     return this._http!.get<Guitar[]>(
-      'https://island-survival-kit-builder.onrender.com/guitars'
+      API_URL
     );
   }
 }

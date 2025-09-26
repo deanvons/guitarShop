@@ -1,0 +1,1 @@
+export const API_URL = "https://island-survival-kit-builder.onrender.com/guitars"

@@ -8,7 +8,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 export const routes: Routes = [
 
 {path: '',component: GuiterListPageComponent},
-{path: 'details',component: GuitarDetailsPageComponent},
+{path: 'details/:guitarId',component: GuitarDetailsPageComponent},
 {path: 'login',component: LoginPageComponent}
 
 

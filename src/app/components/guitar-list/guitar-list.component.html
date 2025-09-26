@@ -1,1 +1,1 @@
-<app-guitar-list-item *ngFor="let guitar of this.guitars" [guitar]="guitar" alt="guitar image" />
+<app-guitar-list-item *ngFor="let guitar of this.guitars" [guitar]="guitar" alt="guitar image" (selectedEvent)="handleSelected($event)"/>
